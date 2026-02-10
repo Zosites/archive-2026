@@ -94,6 +94,30 @@ html {
     font-family: 'Courier New', Courier, monospace;
     letter-spacing: 2px;
 }
+/* The Typewriter Effect */
+.typewriter h1 {
+  overflow: hidden; 
+  border-right: .15em solid #ff4d94; /* The cursor */
+  white-space: nowrap; 
+  margin: 0 auto; 
+  letter-spacing: .15em; 
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing animation */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The blinking cursor */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #ff4d94 }
+}
+
     </style>
 </head>
 <body>
@@ -103,6 +127,7 @@ html {
 </div>
 
     <div class="header">
+        <div class="typewriter">
         <h1>💐💙 HAPPY VALENTINE'S DAY💙💐 </h1>
         <p>There is more and you know it</p>
     </div>
