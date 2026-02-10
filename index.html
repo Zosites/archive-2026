@@ -3,57 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RELATIONSHIP_ARCHIVE_v1.0</title>
+    <title>INTERACTIVE_SUNSET_ARCHIVE</title>
     <style>
-        :root { --main-bg: #0d1117; --text-blue: #58a6ff; --border-gray: #30363d; --success-green: #3fb950; }
-        body { background-color: var(--main-bg); color: var(--text-blue); font-family: 'Courier New', monospace; margin: 0; padding: 20px; display: flex; justify-content: center; }
-        .wrapper { max-width: 700px; width: 100%; border: 1px solid var(--border-gray); padding: 20px; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        h1 { font-size: 1.2rem; color: #f0f6fc; border-bottom: 1px solid var(--border-gray); padding-bottom: 10px; margin-bottom: 20px; }
-        .status { color: var(--success-green); font-weight: bold; margin-bottom: 20px; }
-        .log-section { margin-bottom: 30px; }
-        .log-entry { border-left: 2px solid var(--success-green); padding-left: 15px; margin-bottom: 10px; font-size: 0.9rem; }
-        .media-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
-        img, video { width: 100%; border-radius: 4px; border: 1px solid var(--border-gray); filter: grayscale(20%); }
-        img:hover, video:hover { filter: grayscale(0%); transition: 0.3s; }
-        footer { margin-top: 40px; font-size: 0.7rem; color: #8b949e; text-align: center; border-top: 1px solid var(--border-gray); padding-top: 20px; }
+        body {
+            background: linear-gradient(135deg, #4a90e2, #673ab7, #e91e63, #ff9800);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            font-family: 'Courier New', Courier, monospace;
+            color: white;
+            display: flex; flex-direction: column; align-items: center;
+            padding: 40px 20px; margin: 0; min-height: 100vh;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .header { text-align: center; margin-bottom: 40px; text-shadow: 2px 2px #000; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px; max-width: 1000px; width: 100%;
+        }
+
+        /* The Card System */
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-align: center;
+            position: relative; overflow: hidden;
+        }
+
+        .card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.25); }
+
+        .hidden-content { display: none; margin-top: 15px; animation: fadeIn 0.5s; }
+
+        .card.active .hidden-content { display: block; }
+        .card.active .initial-text { display: none; }
+
+        img, video { width: 100%; border-radius: 10px; margin-top: 10px; border: 1px solid white; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Different designs for different cards */
+        .card-blue { border-top: 5px solid #4a90e2; }
+        .card-purple { border-top: 5px solid #673ab7; }
+        .card-orange { border-top: 5px solid #ff9800; }
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <h1>> SYSTEM_ARCHIVE_INITIATED...</h1>
-        <div class="status">STATUS: ONLINE // 100% UPTIME</div>
 
-        <div class="log-section">
-            <div class="log-entry"><strong>[TIMESTAMP: 2026.02.14]</strong> Initializing Valentine Module.</div>
-            <div class="log-entry"><strong>[USER_NOTE]</strong> You know systems, so I built you one. Happy Valentine's Day.</div>
-        </div>
-
-        <h3>RECOVERED_MEDIA_SAMPLES:</h3>
-        <div class="media-grid">
-            
-            <img src="archive_10.HEIC" alt="Memory 01">
-            <img src="archive_09.HEIC" alt="Memory 02">  
-            <img src="archive_08.HEIC" alt="Memory 03">
-            <img src="archive_07.JPG" alt="Memory 04">
-            <img src="archive_06.HEIC" alt="Memory 05">
-            <img src="archive_11.HEIC" alt="Memory 06">
-            <img src="archive_03.heic" alt="Memory 07">
-            <img src="archive_01.JPG" alt="Memory 01">
-            <video autoplay loop muted playsinline>
-                <source src="log_video_.04.MOV" type="video/mp4">
-            </video>
-                <source src="log_video_.03.MOV" type="video/mp4">
-            </video> 
-                            <source src="log_video_.02.MOV" type="video/mp4">
-            </video>
-                            <source src="log_video_.01.MOV" type="video/mp4">
-            </video>
-
-        </div>
-
-        <footer>
-            End of Transcript. Authorized Access Only. [User: Your Name]
-        </footer>
+    <div class="header">
+        <h1>🌅 SYSTEM_INTERACTION_v1.0</h1>
+        <p>Click each module to decrypt memories...</p>
     </div>
+
+    <div class="grid">
+        
+        <div class="card card-blue" onclick="this.classList.toggle('active')">
+            <div class="initial-text"><h3>[ MODULE_01 ]</h3><p>Tap to expand gallery...</p></div>
+            <div class="hidden-content">
+                <p>"Happy Valentine"</p>
+                <img src="archive_05.JPG">
+                <video autoplay loop muted playsinline><source src="log_video_01.MOV" type="video/mp4"></video>               
+                <p style="font-size: 0.8rem; margin-top: 10px;">Location: Archive_Data_01</p>
+            </div>
+        </div>
+
+        <div class="card card-purple" onclick="this.classList.toggle('active')">
+            <div class="initial-text"><h3>[ MODULE_02 ]</h3><p>Accessing visuals...</p></div>
+            <div class="hidden-content">
+                <p>"You make every system better."</p>
+                <video autoplay loop muted playsinline><source src="log_video_05.MOV" type="video/mp4"></video>
+                <p style="font-size: 0.8rem; margin-top: 10px;">Status: Pure_Joy.exe</p>
+            </div>
+        </div>
+
+        <div class="card card-orange" onclick="this.classList.toggle('active')">
+            <div class="initial-text"><h3>[ MODULE_03 ]</h3><p>Final Log Entry...</p></div>
+            <div class="hidden-content">
+                <p>"I love how your mind works."</p>
+                <img src="archive_03.heic">
+                <p style="font-size: 0.8rem; margin-top: 10px;">Auth: System_Admin_Valentine</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // This tiny script allows the clicking to work!
+        console.log("System Archive Online.");
+    </script>
 </body>
 </html>
