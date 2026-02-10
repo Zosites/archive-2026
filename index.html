@@ -99,7 +99,7 @@ html {
 <body>
     <div id="splash-screen" onclick="revealSite()">
     <div class="pulsing-heart">💖</div>
-    <div class="splash-text">CLICK TO UNWRAP</div>
+    <div class="splash-text">FOR YOU JAKAYLA...</div>
 </div>
 
     <div class="header">
@@ -155,6 +155,12 @@ html {
 function revealSite() {
     const splash = document.getElementById('splash-screen');
     splash.style.opacity = '0';
+    // This part helps "wake up" the music player
+    const musicFrame = 
+        document.querySelector('iframe');
+    if(musicFrame) {
+        musicFrame.focus();
+    }
     setTimeout(() => {
         splash.style.display = 'none';
     }, 1000);
