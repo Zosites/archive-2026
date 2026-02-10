@@ -1,37 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>System Archive: v1.0</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RELATIONSHIP_ARCHIVE_v1.0</title>
     <style>
-        body { background-color: #0d1117; color: #58a6ff; font-family: 'Courier New', Courier, monospace; padding: 50px; line-height: 1.6; }
-        .container { max-width: 800px; margin: auto; border: 1px solid #30363d; padding: 20px; border-radius: 8px; }
-        h1 { color: #f0f6fc; border-bottom: 1px solid #30363d; padding-bottom: 10px; }
-        .status-on { color: #3fb950; font-weight: bold; }
-        .log-entry { margin-bottom: 15px; padding-left: 10px; border-left: 2px solid #238636; }
-        img { max-width: 100%; border-radius: 5px; margin-top: 10px; border: 1px solid #30363d; }
+        :root { --main-bg: #0d1117; --text-blue: #58a6ff; --border-gray: #30363d; --success-green: #3fb950; }
+        body { background-color: var(--main-bg); color: var(--text-blue); font-family: 'Courier New', monospace; margin: 0; padding: 20px; display: flex; justify-content: center; }
+        .wrapper { max-width: 700px; width: 100%; border: 1px solid var(--border-gray); padding: 20px; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        h1 { font-size: 1.2rem; color: #f0f6fc; border-bottom: 1px solid var(--border-gray); padding-bottom: 10px; margin-bottom: 20px; }
+        .status { color: var(--success-green); font-weight: bold; margin-bottom: 20px; }
+        .log-section { margin-bottom: 30px; }
+        .log-entry { border-left: 2px solid var(--success-green); padding-left: 15px; margin-bottom: 10px; font-size: 0.9rem; }
+        .media-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
+        img, video { width: 100%; border-radius: 4px; border: 1px solid var(--border-gray); filter: grayscale(20%); }
+        img:hover, video:hover { filter: grayscale(0%); transition: 0.3s; }
+        footer { margin-top: 40px; font-size: 0.7rem; color: #8b949e; text-align: center; border-top: 1px solid var(--border-gray); padding-top: 20px; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>> SYSTEM_DIAGNOSTICS: SUCCESS</h1>
-        <p><strong>Status:</strong> <span class="status-on">OPTIMIZED & ONLINE</span></p>
-        <p><strong>Subject:</strong> [Her Name] + [Your Name]</p>
-        <hr style="border: 0; border-top: 1px solid #30363d;">
-        
-        <h3>CORE_LOGS:</h3>
-        <div class="log-entry">
-            <strong>[LOG_001]:</strong> Initial connection established. Systems synchronized immediately.
-        </div>
-        <div class="log-entry">
-            <strong>[LOG_002]:</strong> Detected high-level creativity and technical proficiency in partner.
-        </div>
-        <div class="log-entry">
-            <strong>[LOG_003]:</strong> Relationship uptime: [Insert # of days] Days. No crashes detected.
+    <div class="wrapper">
+        <h1>> SYSTEM_ARCHIVE_INITIATED...</h1>
+        <div class="status">STATUS: ONLINE // 100% UPTIME</div>
+
+        <div class="log-section">
+            <div class="log-entry"><strong>[TIMESTAMP: 2026.02.14]</strong> Initializing Valentine Module.</div>
+            <div class="log-entry"><strong>[USER_NOTE]</strong> You know systems, so I built you one. Happy Valentine's Day.</div>
         </div>
 
-        <h3>MEDIA_ARCHIVE:</h3>
-        <p>Archive updated with high-resolution memories...</p>
-        <p><em>(Deploying Valentine_Module_2026...)</em></p>
+        <h3>RECOVERED_MEDIA_SAMPLES:</h3>
+        <div class="media-grid">
+            
+            <img src="archive_10.HEIC" alt="Memory 01">
+            <img src="archive_09.HEIC" alt="Memory 02">  
+            <img src="archive_08.HEIC" alt="Memory 03">
+            <img src="archive_07.JPG" alt="Memory 04">
+            <img src="archive_06.HEIC" alt="Memory 05">
+            <img src="archive_11.HEIC" alt="Memory 06">
+            <img src="archive_03.heic" alt="Memory 07">
+            <img src="archive_01.JPG" alt="Memory 01">
+            <video autoplay loop muted playsinline>
+                <source src="log_video_.04.MOV" type="video/mp4">
+            </video>
+                <source src="log_video_.03.MOV" type="video/mp4">
+            </video> 
+                            <source src="log_video_.02.MOV" type="video/mp4">
+            </video>
+                            <source src="log_video_.01.MOV" type="video/mp4">
+            </video>
+
+        </div>
+
+        <footer>
+            End of Transcript. Authorized Access Only. [User: Your Name]
+        </footer>
     </div>
 </body>
 </html>
