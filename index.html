@@ -117,7 +117,20 @@ html {
   from, to { border-color: transparent }
   50% { border-color: #ff4d94 }
 }
+.rose {
+    position: fixed;
+    top: -10%;
+    z-index: 999;
+    user-select: none;
+    cursor: default;
+    animation: fall linear forwards;
+}
 
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
     </style>
 </head>
 <body>
@@ -180,6 +193,7 @@ html {
 function revealSite() {
     const splash = document.getElementById('splash-screen');
     splash.style.opacity = '0';
+    startRoses(); // <--- Add this line here
     // This part helps "wake up" the music player
     const musicFrame = 
         document.querySelector('iframe');
@@ -189,6 +203,26 @@ function revealSite() {
     setTimeout(() => {
         splash.style.display = 'none';
     }, 1000);
+}
+function createRose() {
+    const rose = document.createElement('div');
+    rose.classList.add('rose');
+    rose.innerHTML = '🌹'; // You can also add '🥀' or '🌸'
+    rose.style.left = Math.random() * 100 + 'vw';
+    rose.style.animationDuration = Math.random() * 3 + 4 + 's'; // 4-7 seconds to fall
+    rose.style.opacity = Math.random() * 0.5 + 0.3;
+    rose.style.fontSize = Math.random() * 10 + 15 + 'px';
+    
+    document.body.appendChild(rose);
+
+    setTimeout(() => {
+        rose.remove();
+    }, 7000);
+}
+
+// Start the roses only AFTER she clicks the heart
+function startRoses() {
+    setInterval(createRose, 500); // New rose every half-second
 }
 </script>
 </body>
