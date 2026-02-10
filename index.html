@@ -60,9 +60,47 @@ html {
         .card-blue { border-top: 5px solid #4a90e2; }
         .card-purple { border-top: 5px solid #673ab7; }
         .card-orange { border-top: 5px solid #ff9800; }
+    #splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a0a2e 0%, #4a0e2e 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1s ease;
+}
+
+.pulsing-heart {
+    font-size: 100px;
+    cursor: pointer;
+    animation: pulse 1.5s infinite;
+    user-select: none;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.splash-text {
+    color: white;
+    margin-top: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 2px;
+}
     </style>
 </head>
 <body>
+    <div id="splash-screen" onclick="revealSite()">
+    <div class="pulsing-heart">💖</div>
+    <div class="splash-text">CLICK TO UNWRAP</div>
+</div>
 
     <div class="header">
         <h1>💐💙 HAPPY VALENTINE💙💐 </h1>
@@ -113,5 +151,14 @@ html {
         // This tiny script allows the clicking to work!
         console.log("System Archive Online.");
     </script>
+<script>
+function revealSite() {
+    const splash = document.getElementById('splash-screen');
+    splash.style.opacity = '0';
+    setTimeout(() => {
+        splash.style.display = 'none';
+    }, 1000);
+}
+</script>
 </body>
 </html>
